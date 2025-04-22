@@ -1,0 +1,205 @@
+.birthday-container {
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background-color: #fff0f5;
+  padding: 20px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  direction: rtl;
+}
+
+h1 {
+  color: #d63384;
+  margin-bottom: 20px;
+  font-size: 2.2rem;
+}
+
+.instructions {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #5a2d82;
+}
+
+/* Balloons Container */
+.balloons-container {
+  position: relative;
+  min-height: 60vh;
+}
+
+.balloons {
+  position: relative;
+  height: 60vh;
+}
+
+.balloon {
+  position: absolute;
+  width: 60px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: float 4s ease-in-out infinite;
+  z-index: 10;
+}
+
+.balloon:before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 80px;
+  background-color: #333;
+  bottom: -80px;
+  left: 50%;
+}
+
+.balloon:hover {
+  transform: scale(1.1);
+}
+
+.balloon.popped {
+  animation: pop 0.5s ease-out;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.current-message {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  display: inline-block;
+  max-width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.current-message p {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #d63384;
+}
+
+/* Birthday Message */
+.birthday-message {
+  background-color: white;
+  padding: 25px;
+  border-radius: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.cake {
+  font-size: 80px;
+  margin: 20px 0;
+}
+
+.photo {
+  width: 200px;
+  height: 250px;
+}
+
+.message-content {
+  padding: 15px;
+}
+
+.kurdish-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.highlight {
+  background-color: #f8e3ff;
+  padding: 5px 10px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.signature {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.8rem;
+  color: #d63384;
+  margin-top: 20px;
+}
+
+/* Animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .instructions {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .balloon {
+    width: 50px;
+    height: 70px;
+    font-size: 24px;
+  }
+
+  .balloon:before {
+    height: 60px;
+    bottom: -60px;
+  }
+
+  .birthday-message {
+    padding: 15px;
+    margin: 0 10px;
+  }
+
+  .kurdish-text {
+    font-size: 1rem;
+  }
+
+  .cake {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .balloon {
+    width: 40px;
+    height: 60px;
+    font-size: 20px;
+  }
+
+  .current-message p {
+    font-size: 1rem;
+  }
+}
